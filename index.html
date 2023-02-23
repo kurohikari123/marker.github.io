@@ -12,10 +12,9 @@
         <script>
             AFRAME.registerComponent('render',{
                 init: function(){
-                    var render = new THREE.WebGLRenderer({
+                    this.el.render = new THREE.WebGLRenderer({
                         logarithmicDepthBuffer: true
                     });
-                    this.el.setObject3D('renderer',render);
                 }
             });
         </script>
@@ -23,7 +22,7 @@
 
     <body>
         <a-scene
-            renderer="logarithmicDepthBuffer: true;"
+            render
             embedded
             loading-screen="enabled: false;"
             arjs="sourceType: webcam; debugUIEnabled: false;"
