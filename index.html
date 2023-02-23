@@ -12,7 +12,7 @@
         <script>
             AFRAME.registerComponent('render',{
                 init: function(){
-                    this.el.render = new THREE.WebGLRenderer({
+                    this.el.renderer = new THREE.WebGLRenderer({
                         logarithmicDepthBuffer: true
                     });
                 }
