@@ -11,19 +11,16 @@
 
 <script src="./script.js"></script>
 <body style='margin: 0; overflow: hidden;'>
-    <div>
-        <div align="bottom" style="position: absolute; bottom: 20px; height: 20px; width: 100px; color: black;">
-            <button color-change id="b1" style='position: absolute; z-index: 1; padding: 15px 32px;'>
-                Blue
-            </button>
-        </div>
-        <a-scene
-           vr-mode-ui="enabled: false"
-            embedded
-            arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-            <a-camera gps-camera rotation-reader>
-            </a-camera>
-        </a-scene>
-
+    <div align="bottom" style="position: absolute; bottom: 20px; height: 20px; width: 100px; color: black;">
+        <button color-change id="b1" style='position: relative; z-index: 10; padding: 15px 32px;'>
+            Blue
+        </button>
     </div>
+    <a-scene
+       vr-mode-ui="enabled: false"
+		embedded
+        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+        <a-camera gps-camera rotation-reader>
+		</a-camera>
+	</a-scene>
 </body>
