@@ -26,10 +26,7 @@
 <script src="./script.js"></script>
 <body style='margin: 0; overflow: hidden;'>
     <img src="icons8-ar-64.png" alt="LOGO">
-    <a-scene
-       vr-mode-ui="enabled: false"
-		embedded
-        arjs='sourceType: webcam;debugUIEnabled: false;'>
+    <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
         <a-camera gps-camera rotation-reader>
 		</a-camera>
 	</a-scene>
