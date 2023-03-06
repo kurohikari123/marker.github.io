@@ -18,17 +18,22 @@
   text-align: center;
   color: white;
   top: 5%;
-  background-image: url(icons8-ar-64.png);
-  background-size: cover;
+  padding: 5px;
   border: none;
-  background-color: transparent;
+  background: transparent;
+}
+.logo{
+    width: 90px;
+    height: 80px;
 }
     </style>
 </head>
 
 <script src="./script.js"></script>
 <body style='margin: 0; overflow: hidden;'>
-    <button class="image"></button>
+    <button class="image">
+        <img class="logo" src="icons8-ar-64 (1).png" alt="LOGO">
+    </button>
     <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
         <a-camera gps-camera rotation-reader>
 		</a-camera>
