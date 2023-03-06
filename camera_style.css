@@ -1,0 +1,61 @@
+.image{
+    width: 61px;
+    height: 53px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    line-height: 100px;
+    text-align: center;
+    color: white;
+    padding: 5px;
+    border: none;
+    background: transparent;
+  }
+  .image2{
+    width: 40px;
+    height: 60px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: 9999;
+    line-height: 100px;
+    text-align: center;
+    color: white;
+    padding: 5px;
+    border: none;
+    background: transparent;
+  }
+  .image3{
+    width: 61px;
+    height: 53px;
+    position: absolute;
+    top: 0px;
+    right: 3px;
+    z-index: 9999;
+    line-height: 100px;
+    text-align: center;
+    color: white;
+    padding-left: 5px;
+    border: none;
+    background: transparent;
+  }
+  .image4{
+    width: 61px;
+    height: 60px;
+    position: absolute;
+    bottom: 0px;
+    right: 3px;
+    z-index: 9999;
+    line-height: 100px;
+    text-align: center;
+    color: white;
+    padding-left: 5px;
+    border: none;
+    background: transparent;
+  }
+  .logo{
+      width: 61px;
+      height: 53px;
+  }
+  
