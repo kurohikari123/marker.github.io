@@ -2,7 +2,7 @@ var supa = supabase.createClient('https://kbvhwxtlilabjpngjbup.supabase.co', 'ey
 async function start(){
     const { data, error } = await supa
     .from('admin')
-    .select(a_id,pass)
+    .select('a_id,pass')
     console.log(data)  
 }
 
