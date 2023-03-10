@@ -5,29 +5,25 @@ async function start(){
     .select('a_id,pass')
     console.log(data)  
 }
-function login()
-{
-    async function log(){
-        const {data:posts, error}=await supa
-        .from('admin')
-        .select('*')
-        if(!error){
-            posts.forEach(function(item){
-                if(JSON.stringify(item.a_id) == document.getElementById('uid').value && JSON.stringify(item.pass) == document.getElementById('pass').value )
-                {
-                    console.log(item)
-                }
-                else
-                {
-                    alert('Wrong Credentials')
-                }
-            })
-        }
-        else
-        {
-            console.log(error)
-        }
+async function admin_login(){
+    const {data:posts, error}=await supa
+    .from('admin')
+    .select('*')
+    if(!error){
+        posts.forEach(function(item){
+            if(JSON.stringify(item.a_id) == document.getElementById('uid').value && JSON.stringify(item.pass) == document.getElementById('pass').value )
+            {
+                console.log(item)
+            }
+            else
+            {
+                alert('Wrong Credentials')
+            }
+        })
     }
-    log();
+    else
+    {
+        console.log(error)
+    }
 }
 start();
