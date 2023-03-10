@@ -26,3 +26,7 @@ async function admin_login(){
         console.log(error)
     }
 }
+function pop()
+{
+    console.log('hello')
+}
