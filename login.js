@@ -26,4 +26,3 @@ async function admin_login(){
         console.log(error)
     }
 }
-document.getElementById('button').addEventListener('click',await start())
