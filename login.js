@@ -2,7 +2,7 @@ var supa = supabase.createClient('https://kbvhwxtlilabjpngjbup.supabase.co', 'ey
 async function start(){
        
 const { data, error } = await supa
-.from('companies')
+.from('admin')
 .select("*")
 console.log(data)  
 }
