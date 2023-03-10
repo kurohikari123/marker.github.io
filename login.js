@@ -3,7 +3,7 @@ async function start(){
     const { data, error } = await supa
     .from('admin')
     .select('a_id,pass')
-    return data 
+     console.log(data)
 }
 async function admin_login(){
     const {data:posts, error}=await supa
