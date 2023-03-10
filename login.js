@@ -13,7 +13,7 @@ async function login(){
         posts.forEach(function(item){
             if(JSON.stringify(item.a_id) == document.getElementById('uid').value && JSON.stringify(item.pass) == document.getElementById('pass').value )
             {
-                window.open('index.html')
+                window.open('https://kurohikari123.github.io/marker.github.io/')
             }
             else
             {
@@ -26,5 +26,4 @@ async function login(){
         console.log(error)
     }
 }
-document.getElementById('button').onclick=login();
 start();
