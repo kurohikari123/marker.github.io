@@ -6,7 +6,6 @@ async function start(){
     .select('a_id,pass')
      console.log(data)
 }
-document.querySelector('signin').addEventListener('click',start)
 async function admin_login(){
     const {data:posts, error}=await supa
     .from('admin')
