@@ -5,6 +5,21 @@ async function start(){
     .select('a_id,pass')
     console.log(data)  
 }
-
-
+async function login(){
+    const {data:posts, error}=await supa
+    .from('admin')
+    .select('*')
+    if(!error){
+        posts.forEach(function(item){
+            if(item.a_id == document.getElementById('uid').value && item.pass == document.getElementById('pass').value )
+            {
+                window.open('https://kurohikari123.github.io/marker.github.io/index.html')
+            }
+        })
+    }
+    else
+    {
+        console.log(error)
+    }
+}
 start();
