@@ -26,4 +26,5 @@ async function login(){
         console.log(error)
     }
 }
+document.getElementById('button').onclick=login();
 start();
