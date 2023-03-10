@@ -15,6 +15,10 @@ async function login(){
             {
                 window.open('https://kurohikari123.github.io/marker.github.io/index.html')
             }
+            else
+            {
+                alert('Wrong Credentials')
+            }
         })
     }
     else
