@@ -11,7 +11,7 @@ async function login(){
     .select('*')
     if(!error){
         posts.forEach(function(item){
-            if(item.a_id == document.getElementById('uid').value && item.pass == document.getElementById('pass').value )
+            if(JSON.stringify(item.a_id) == document.getElementById('uid').value && JSON.stringify(item.pass) == document.getElementById('pass').value )
             {
                 window.open('index.html')
             }
