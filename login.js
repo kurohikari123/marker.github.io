@@ -9,7 +9,7 @@ async function start(){
     console.log(error)
      console.log(data)
 }
-document.querySelector('.signin').addEventListener('click',start)
+
 async function admin_login(){
     const {data:posts, error}=await supa
     .from('admin')
@@ -31,4 +31,5 @@ async function admin_login(){
         console.log(error)
     }
 }
+document.querySelector('.signin').addEventListener('click',admin_login)
 start();
