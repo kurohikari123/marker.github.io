@@ -43,7 +43,7 @@ function renderPlaces(places) {
        model.setAttribute('gltf-model', './assets/asset.glb');
        model.setAttribute('animation-mixer', '');
        model.setAttribute('rotation','0 0 30');
-       model.setAttribute('scale', '10 10 10');
+       model.setAttribute('scale', '50 50 50');
        model.setAttribute('position','0 30 0');
 
        model2.addEventListener('loaded', () => {
