@@ -19,6 +19,7 @@ async function admin_login(){
             if((item.a_id) == document.getElementById('uid').value && (item.pass) == document.getElementById('pass').value )
             {
                 console.log(item)
+                window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
             }
             else
             {
