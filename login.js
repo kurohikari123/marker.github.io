@@ -4,6 +4,7 @@ async function start(){
     const { data, error } = await supa
     .from('admin')
     .select('a_id,pass')
+    console.log(error)
      console.log(data)
 }
 async function admin_login(){
