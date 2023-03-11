@@ -8,6 +8,10 @@ body{
     height: 100vh;
     overflow: hidden;
  }
+ html
+ {
+    overflow-y: scroll;
+ }
  .center{
      position: absolute;
      top: 30%;
