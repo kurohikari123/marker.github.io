@@ -17,6 +17,7 @@ async function user_cred(){
      console.log(data)
 }
 async function user_login(){
+    var i=0
     const {data:posts,error}=await supa
     .from('users')
     .select('*')
@@ -29,29 +30,43 @@ async function user_login(){
             if((item.u_id) == document.getElementById('uid').value && (item.u_pass) == document.getElementById('pass').value)
             {
                 console.log(item)
-                console.log(count)
-                //window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
+                window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
             }
             else{
-                return true
+                i=i+1
+                if(i>count)
+                {
+                    alert('Wrong Credentials')
+                }
             }
         })
     }
     else
     {
-        alert('Wrong Credentials')
+        console.log(error)
     }
 }
 async function admin_login(){
     const {data:posts, error}=await supa
     .from('admin')
     .select('*')
+
+    const {count}=await supa
+    .from('admin')
+    .select('*',{count:'exact',head:true})
     if(!error){
         posts.forEach(function(item){
             if((item.a_id) == document.getElementById('uid').value && (item.pass) == document.getElementById('pass').value )
             {
                 console.log(item)
                 window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
+            }
+            else{
+               i=i+1
+               if(i>count)
+               {
+                user_login()
+               }
             }
         })
     }
@@ -65,6 +80,6 @@ async function admin_login(){
 
 
 
-document.querySelector('.signin').addEventListener('click',user_login)
+document.querySelector('.signin').addEventListener('click',admin_login)
 admin_cred();
 user_cred();
