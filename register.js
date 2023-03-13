@@ -10,8 +10,6 @@ async function users(){
     console.log(data)
 }
 async function register(){
-    if((document.querySelectorAll('.tbox').value).length>0)
-{
     const {error}=await supa
     .from('users')
     .insert({u_id:document.querySelector('#u_id').value,
@@ -25,25 +23,6 @@ async function register(){
     updated_time:time,
     created_date:date,
     updated_date:date})
-}
-else{
-    alert('Information Incomplete')
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     const {message}=error
     //////////////////////////////////////////////////////////////////////////
     if(message == 'duplicate key value violates unique constraint "users_u_ph_key"')
