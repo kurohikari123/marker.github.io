@@ -28,7 +28,7 @@ async function register(){
     {
         document.getElementById('error1').style.display="initial"
     }
-    else if(document.getElementById('ph_no').value == " "){
+    else if(document.getElementById('ph_no').value == ""){
         document.getElementById('error1').style.display="none"
     }
     else
@@ -41,7 +41,7 @@ async function register(){
     {
         document.getElementById('error2').style.display="initial"
     }
-    else if(document.getElementById('email').value == " "){
+    else if(document.getElementById('email').value == ""){
         document.getElementById('error2').style.display="none"
     }
     else{
@@ -53,7 +53,7 @@ async function register(){
     {
         document.getElementById('error3').style.display="initial"
     }
-    else if(document.getElementById('u_id').value == " "){
+    else if(document.getElementById('u_id').value == ""){
         document.getElementById('error3').style.display="none"
     }
     else{
@@ -67,7 +67,7 @@ function check()
     {
         document.getElementById('error4').style.display="initial"
     }
-    else if(document.getElementById('confirm').value == " " || document.getElementById('u_pass').value ==" "){
+    else if(document.getElementById('confirm').value == "" || document.getElementById('u_pass').value ==""){
         document.getElementById('error4').style.display="none"
     }
     else{
