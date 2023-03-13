@@ -28,20 +28,33 @@ async function register(){
     {
         document.getElementById('error1').style.display="initial"
     }
+    else if(document.getElementById('ph_no').value == " "){
+        document.getElementById('error1').style.display="none"
+    }
     else
     {
         document.getElementById('error1').style.display="none"
     }
+
+
     if(message == 'duplicate key value violates unique constraint "users_u_mail_key"')
     {
         document.getElementById('error2').style.display="initial"
     }
+    else if(document.getElementById('email').value == " "){
+        document.getElementById('error2').style.display="none"
+    }
     else{
         document.getElementById('error2').style.display="none"
     }
+
+
     if(message == 'duplicate key value violates unique constraint "users_pkey"')
     {
         document.getElementById('error3').style.display="initial"
+    }
+    else if(document.getElementById('u_id').value == " "){
+        document.getElementById('error3').style.display="none"
     }
     else{
         document.getElementById('error3').style.display="none"
@@ -53,6 +66,9 @@ function check()
     if(document.getElementById('confirm').value != document.getElementById('u_pass').value)
     {
         document.getElementById('error4').style.display="initial"
+    }
+    else if(document.getElementById('confirm').value == " " || document.getElementById('u_pass').value ==" "){
+        document.getElementById('error4').style.display="none"
     }
     else{
         document.getElementById('error4').style.display="none"
