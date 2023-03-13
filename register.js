@@ -67,7 +67,7 @@ function check()
     }
 }
 
-document.querySelector('.signin').addEventListener('submit',register)
+document.querySelector('.signin').addEventListener('click',register)
 users();
 document.getElementById('confirm').addEventListener('keyup',check)
 
