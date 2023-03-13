@@ -24,7 +24,7 @@ async function user_login(){
         posts.forEach(function(item2){
             if((item2.u_id) == document.getElementById('uid').value && (item2.u_pass) == document.getElementById('pass').value)
             {
-                console.log(item)
+                console.log(item2)
                 window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
             }
             else
