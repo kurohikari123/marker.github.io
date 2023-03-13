@@ -21,7 +21,7 @@ async function user_login(){
     .from('users')
     .select('*')
     if(!error){
-        posts.some(function(item){
+        posts.forEach(function(item){
             if((item.u_id) == document.getElementById('uid').value && (item.u_pass) == document.getElementById('pass').value)
             {
                 console.log(item)
