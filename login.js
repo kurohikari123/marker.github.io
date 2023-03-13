@@ -28,7 +28,6 @@ async function user_login(){
                 window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
             }
         })
-        alert('Wrong Credentials')
     }
 }
 async function admin_login(){
@@ -43,7 +42,6 @@ async function admin_login(){
                 window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
             }
         })
-        user_login()
     }
     else
     {
