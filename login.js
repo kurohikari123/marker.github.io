@@ -21,17 +21,14 @@ async function user_login(){
     .from('users')
     .select('*')
     if(!error){
-        posts.forEach(function(item2){
-            if((item2.u_id) == document.getElementById('uid').value && (item2.u_pass) == document.getElementById('pass').value)
+        posts.forEach(function(item){
+            if((item.u_id) == document.getElementById('uid').value && (item.u_pass) == document.getElementById('pass').value)
             {
-                console.log(item2)
+                console.log(item)
                 window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
             }
-            else
-            {
-                alert('Wrong Credentials')
-            }
         })
+        alert('Wrong Credentials')
     }
 }
 async function admin_login(){
@@ -45,11 +42,8 @@ async function admin_login(){
                 console.log(item)
                 window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
             }
-            else
-            {
-                alert('Wrong Credentials')
-            }
         })
+        user_login()
     }
     else
     {
