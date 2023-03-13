@@ -19,7 +19,7 @@ async function user_cred(){
 async function user_login(){
     const {data:posts,error}=await supa
     .from('users')
-    .select('*',{count:'exact',head: true})
+    .select('*',{count:'exact'})
     if(!error){
         posts.forEach(function(item){
             if((item.u_id) == document.getElementById('uid').value && (item.u_pass) == document.getElementById('pass').value)
