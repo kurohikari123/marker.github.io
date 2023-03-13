@@ -48,7 +48,7 @@ async function user_login(){
     }
 }
 async function admin_login(){
-    var i=0
+    var i=1
     const {data:posts, error}=await supa
     .from('admin')
     .select('*')
@@ -82,6 +82,6 @@ async function admin_login(){
 
 
 
-document.querySelector('.signin').addEventListener('click',user_login)
+document.querySelector('.signin').addEventListener('click',admin_login)
 admin_cred();
 user_cred();
