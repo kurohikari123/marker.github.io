@@ -2,14 +2,14 @@
 import {createClient} from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 //const {createClient}=require('https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm')
 var supa = createClient('https://kbvhwxtlilabjpngjbup.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imtidmh3eHRsaWxhYmpwbmdqYnVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzgzNjMyODcsImV4cCI6MTk5MzkzOTI4N30.9DZ2DAguUucUH8_ADBVyXEJRQ_Do1SIctNjH4hySdjw');
-async function start(){
+async function admin_cred(){
     const { data, error } = await supa
     .from('admin')
     .select('a_id,pass')
     console.log(error)
      console.log(data)
 }
-async function start(){
+async function user_cred(){
     const { data, error } = await supa
     .from('users')
     .select('u_id,u_pass')
@@ -57,4 +57,5 @@ async function admin_login(){
     }
 }
 document.querySelector('.signin').addEventListener('click',admin_login)
-start();
+admin_cred();
+user_cred();
