@@ -26,7 +26,7 @@ async function register(){
     const {code}=error
     if(code == '23505')
     {
-        document.getElementById('#error1').style.display=initial;
+        document.getElementById('error1').style.display=initial
     }
 }
 document.querySelector('.signin').addEventListener('click',register)
