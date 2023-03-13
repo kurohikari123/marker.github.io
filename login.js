@@ -47,6 +47,7 @@ async function user_login(){
     }
 }
 async function admin_login(){
+    var i=0
     const {data:posts, error}=await supa
     .from('admin')
     .select('*')
