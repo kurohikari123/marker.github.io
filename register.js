@@ -16,7 +16,7 @@ async function register(){
     u_ph:document.querySelector('#ph_no').value,
     u_address:document.querySelector('#address').value,
     u_pass:document.querySelector('#u_pass').value,
-    u_mail:document.querySelector('email').value,
+    u_mail:document.querySelector('#email').value,
     u_firstname:document.querySelector('#firstname').value,
     u_lastname:document.querySelector('#lastname').value,
     created_time:time,
