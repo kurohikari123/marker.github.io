@@ -10,7 +10,7 @@ async function users(){
     console.log(data)
 }
 async function register(){
-    if((document.querySelector('.tbox').value).length>0)
+    if((document.querySelectorAll('.tbox').value).length>0)
 {
     const {error}=await supa
     .from('users')
