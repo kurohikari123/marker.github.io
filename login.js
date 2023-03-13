@@ -19,12 +19,13 @@ async function user_cred(){
 async function user_login(){
     const {data:posts,error}=await supa
     .from('users')
-    .select('*',{count:'exact'})
+    .select('*',{count:'exact',head: true})
     if(!error){
         posts.forEach(function(item){
             if((item.u_id) == document.getElementById('uid').value && (item.u_pass) == document.getElementById('pass').value)
             {
                 console.log(item)
+                console.log(data)
                 //window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
             }
             else{
