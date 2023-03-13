@@ -23,10 +23,18 @@ async function register(){
     updated_time:time,
     created_date:date,
     updated_date:date})
-    const {code}=error
-    if(code == '23505')
+    const {message}=error
+    if(message == 'duplicate key value violates unique constraint "users_u_ph_key"')
     {
         document.getElementById('error1').style.display="initial"
+    }
+    if(message == 'duplicate key value violates unique constraint "users_u_mail_key"')
+    {
+        document.getElementById('error2').style.display="initial"
+    }
+    if(message == 'duplicate key value violates unique constraint "users_pkey"')
+    {
+        document.getElementById('error3').style.display="initial"
     }
     console.log(error)
 }
