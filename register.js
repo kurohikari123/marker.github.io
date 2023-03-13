@@ -10,6 +10,14 @@ async function users(){
     console.log(data)
 }
 async function register(){
+    if((document.getElementById('firstname').value).length==0)
+    {
+       alert('Empty Textbox')
+    }
+
+
+
+
     const {error}=await supa
     .from('users')
     .insert({u_id:document.querySelector('#u_id').value,
