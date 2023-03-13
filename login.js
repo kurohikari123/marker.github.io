@@ -29,6 +29,10 @@ async function user_login(){
             }
         })
     }
+    else
+    {
+        alert('Wrong Credentials')
+    }
 }
 async function admin_login(){
     const {data:posts, error}=await supa
