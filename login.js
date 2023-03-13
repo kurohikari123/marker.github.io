@@ -34,6 +34,7 @@ async function user_login(){
             }
             else{
                 i=i+1
+                console.log(i)
                 if(i>count)
                 {
                     alert('Wrong Credentials')
