@@ -7,4 +7,4 @@ async function users(){
     console.log(error)
     console.log(data)
 }
-document.querySelector('.sigin').addEventListener('click',users)
+document.querySelector('.signin').addEventListener('click',users)
