@@ -50,7 +50,7 @@ async function register(){
 }
 function check()
 {
-    if(document.getElementById('confirm').value == document.getElementById('u_pass').value)
+    if(document.getElementById('confirm').value != document.getElementById('u_pass').value)
     {
         document.getElementById('error4').style.display="initial"
     }
