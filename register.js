@@ -1,12 +1,12 @@
 import {createClient} from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 var supa = createClient('https://kbvhwxtlilabjpngjbup.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imtidmh3eHRsaWxhYmpwbmdqYnVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzgzNjMyODcsImV4cCI6MTk5MzkzOTI4N30.9DZ2DAguUucUH8_ADBVyXEJRQ_Do1SIctNjH4hySdjw');
-firstname=document.getElementById('firstname').value;
-lastname=document.getElementById('lastname').value;
-address=document.getElementById('address').value;
-ph_no=document.getElementById('ph_no').value;
-email=document.getElementById('email').value;
-u_id=document.getElementById('u_id').value;
-u_pass=document.getElementById('u_pass').value;
+var firstname=document.getElementById('firstname').value;
+var lastname=document.getElementById('lastname').value;
+var address=document.getElementById('address').value;
+var ph_no=document.getElementById('ph_no').value;
+var email=document.getElementById('email').value;
+var u_id=document.getElementById('u_id').value;
+var u_pass=document.getElementById('u_pass').value;
 async function users(){
     const {data,error}=await supa
     .from('users')
