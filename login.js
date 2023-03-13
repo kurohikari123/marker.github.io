@@ -9,6 +9,13 @@ async function start(){
     console.log(error)
      console.log(data)
 }
+async function start(){
+    const { data, error } = await supa
+    .from('users')
+    .select('u_id,u_pass')
+    console.log(error)
+     console.log(data)
+}
 async function user_login(){
     const {data:posts,error}=await supa
     .from('users')
@@ -17,7 +24,7 @@ async function user_login(){
         posts.forEach(function(item){
             if((item.u_id) == document.getElementById('uid').value && (item.u_pass) == document.getElementById('pass').value)
             {
-                console.log(items)
+                console.log(item)
                 window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
             }
             else
