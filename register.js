@@ -23,7 +23,11 @@ async function register(){
     updated_time:time,
     created_date:date,
     updated_date:date})
-    console.log(error)
+    const {code}=error
+    if(code == '23505')
+    {
+        document.getElementById('#error1').style.display=initial;
+    }
 }
 document.querySelector('.signin').addEventListener('click',register)
 users();
