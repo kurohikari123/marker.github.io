@@ -24,6 +24,7 @@ async function register(){
     created_date:date,
     updated_date:date})
     const {message}=error
+    //////////////////////////////////////////////////////////////////////////
     if(message == 'duplicate key value violates unique constraint "users_u_ph_key"')
     {
         document.getElementById('error1').style.display="initial"
@@ -36,7 +37,7 @@ async function register(){
         document.getElementById('error1').style.display="none"
     }
 
-
+//////////////////////////////////////////////////////////////////////////////////
     if(message == 'duplicate key value violates unique constraint "users_u_mail_key"')
     {
         document.getElementById('error2').style.display="initial"
@@ -47,7 +48,7 @@ async function register(){
     else{
         document.getElementById('error2').style.display="none"
     }
-
+////////////////////////////////////////////////////////////////////////////////
 
     if(message == 'duplicate key value violates unique constraint "users_pkey"')
     {
@@ -67,7 +68,7 @@ function check()
     {
         document.getElementById('error4').style.display="initial"
     }
-    else if(document.getElementById('confirm').value == "" || document.getElementById('u_pass').value ==""){
+    else if(document.getElementById('u_pass').value ==""){
         document.getElementById('error4').style.display="none"
     }
     else{
