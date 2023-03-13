@@ -33,18 +33,10 @@ async function user_login(){
             }
         })
     }
-    else
-    {
-        console.log(error)
-    }
 }
 async function admin_login(){
     const {data:posts, error}=await supa
     .from('admin')
-    .select('*')
-
-    const {data1:posts2}=await supa
-    .from('users')
     .select('*')
     if(!error){
         posts.forEach(function(item){
@@ -53,26 +45,17 @@ async function admin_login(){
                 console.log(item)
                 window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
             }
-            else 
+            else
             {
-                posts2.forEach(function(item2){
-                    if((item2.u_id) == document.getElementById('uid').value && (item2.u_pass) == document.getElementById('pass').value)
-                    {
-                       console.log(item2)
-                       window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
-                    }
-                    else
-                    {
-                        alert("Wrong Credentials")
-                    }
-                })
+                user_login()
             }
-         })
+        })
     }
     else
     {
         console.log(error)
     }
+   
 }
 document.querySelector('.signin').addEventListener('click',admin_login)
 admin_cred();
