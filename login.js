@@ -33,6 +33,10 @@ async function user_login(){
             }
         })
     }
+    else
+    {
+        console.log(error)
+    }
 }
 async function admin_login(){
     const {data:posts, error}=await supa
