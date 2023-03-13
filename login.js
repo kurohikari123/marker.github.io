@@ -45,16 +45,13 @@ async function admin_login(){
                 console.log(item)
                 window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
             }
-            else
-            {
-                user_login()
-            }
         })
     }
     else
     {
         console.log(error)
     }
+    user_login()
 }
 document.querySelector('.signin').addEventListener('click',admin_login)
 admin_cred();
