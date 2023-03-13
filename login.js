@@ -81,6 +81,6 @@ async function admin_login(){
 
 
 
-document.querySelector('.signin').addEventListener('click',admin_login)
+document.querySelector('.signin').addEventListener('click',user_login)
 admin_cred();
 user_cred();
