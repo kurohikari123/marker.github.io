@@ -24,6 +24,7 @@ async function register(){
     created_date:date,
     updated_date:date})
     console.log(error)
+    document.querySelector('form').reset();
 }
 document.querySelector('.signin').addEventListener('click',register)
 users();
