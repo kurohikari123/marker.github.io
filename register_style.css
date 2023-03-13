@@ -87,3 +87,6 @@ body{
      text-align: center;
      padding: 0 3px;
  }
+ #error1,#error2,#error3{
+    color: red;
+ }
