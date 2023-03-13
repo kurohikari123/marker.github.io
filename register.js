@@ -28,13 +28,23 @@ async function register(){
     {
         document.getElementById('error1').style.display="initial"
     }
+    else
+    {
+        document.getElementById('error1').style.display="none"
+    }
     if(message == 'duplicate key value violates unique constraint "users_u_mail_key"')
     {
         document.getElementById('error2').style.display="initial"
     }
+    else{
+        document.getElementById('error2').style.display="none"
+    }
     if(message == 'duplicate key value violates unique constraint "users_pkey"')
     {
         document.getElementById('error3').style.display="initial"
+    }
+    else{
+        document.getElementById('error3').style.display="none"
     }
     console.log(error)
 }
