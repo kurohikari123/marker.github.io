@@ -28,6 +28,7 @@ async function register(){
     {
         document.getElementById('error1').style.display="initial"
     }
+    console.log(error)
 }
 document.querySelector('.signin').addEventListener('click',register)
 users();
