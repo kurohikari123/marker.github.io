@@ -61,5 +61,5 @@ function check()
 
 document.querySelector('.signin').addEventListener('click',register)
 users();
-document.getElementById('confirm').addEventListener('onkeyup',check)
+document.getElementById('confirm').addEventListener('keyup',check)
 
