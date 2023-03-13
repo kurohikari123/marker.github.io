@@ -9,7 +9,24 @@ async function start(){
     console.log(error)
      console.log(data)
 }
-
+async function user_login(){
+    const {data:posts,error}=await supa
+    .from('users')
+    .select('*')
+    if(!error){
+        posts.forEach(function(item){
+            if((item.u_id) == document.getElementById('uid').value && (item.u_pass) == document.getElementById('pass').value)
+            {
+                console.log(items)
+                window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
+            }
+            else
+            {
+                alert('Wrong Credentials')
+            }
+        })
+    }
+}
 async function admin_login(){
     const {data:posts, error}=await supa
     .from('admin')
@@ -23,7 +40,7 @@ async function admin_login(){
             }
             else
             {
-                alert('Wrong Credentials')
+                user_login()
             }
         })
     }
