@@ -48,5 +48,18 @@ async function register(){
     }
     console.log(error)
 }
+function check()
+{
+    if(document.getElementById('confirm').value == document.getElementById('u_pass').value)
+    {
+        document.getElementById('error4').style.display="initial"
+    }
+    else{
+        document.getElementById('error4').style.display="none"
+    }
+}
+
 document.querySelector('.signin').addEventListener('click',register)
 users();
+document.getElementById('confirm').addEventListener('onkeyup',check)
+

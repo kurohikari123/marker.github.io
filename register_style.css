@@ -87,7 +87,7 @@ body{
      text-align: center;
      padding: 0 3px;
  }
- #error1,#error2,#error3{
+ #error1,#error2,#error3,#error4{
     color: red;
     display: none;
     margin-bottom: 0;
