@@ -17,7 +17,7 @@ async function user_cred(){
      console.log(data)
 }
 async function user_login(){
-    var i=0
+    var i=1
     const {data:posts,error}=await supa
     .from('users')
     .select('*')
