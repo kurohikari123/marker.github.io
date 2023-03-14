@@ -66,6 +66,7 @@ async function register(){
         }
         else
         {
+            document.getElementById('error1').style.display="none"
             document.getElementById('error5').style.display="initial"
             return false
         }
