@@ -62,7 +62,17 @@ body{
      color: white;
      height: 32px;
      font-weight: 700;
+     transition: 0.4s;
  }
+.signin:hover{
+    background: #094637;
+     border: 1px solid #1B8719;
+     border-radius: 5px;
+     width: 340px;
+     color: white;
+     height: 32px;
+     font-weight: 700;
+}
 
  .submit_button{
      text-align: center;
