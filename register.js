@@ -9,7 +9,7 @@ async function users(){
     console.log(error)
     console.log(data)
 }
-async function register(){
+async function register(event){
     const {error}=await supa
     .from('users')
     .insert({u_id:document.querySelector('#u_id').value,
@@ -52,6 +52,7 @@ async function register(){
         document.getElementById('error3').style.display="none"
     }
     console.log(error)
+    event.preventDefault()
 }
 function check()
 {
@@ -67,7 +68,7 @@ function check()
     }
 }
 
-document.querySelector('.signin').addEventListener('click',register)
+document.getElementById('form').addEventListener('submit',register)
 users();
 document.getElementById('confirm').addEventListener('keyup',check)
 
