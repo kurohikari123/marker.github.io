@@ -18,7 +18,15 @@ async function location()
     })
     console.log(error)
 }
+async function loadData()
+{
+    const {data,error}= await supa
+    .from('locations')
+    .select('*')
+    console.log(data)
+}
 window.onload = () => {
+     loadData()
      location()
 };
 
