@@ -8,7 +8,7 @@ async function admin_cred(){
     .select('a_id,pass')
     console.log(error)
      console.log(data)
-}
+} 
 async function user_cred(){
     const { data, error } = await supa
     .from('users')
@@ -37,7 +37,13 @@ async function user_login(){
                 console.log(i)
                 if(i>count)
                 {
-                    alert('Wrong Credentials')
+                    document.getElementById('error1').style.display="initial"
+                    document.getElementById('error2').style.display="initial"
+                }
+                else
+                {
+                    document.getElementById('error1').style.display="none"
+                    document.getElementById('error2').style.display="none"
                 }
             }
         })
