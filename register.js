@@ -44,6 +44,7 @@ async function register(){
                 document.getElementById('error3').style.display="none"
                 document.getElementById('error4').style.display="none"
                 document.getElementById('error5').style.display="none"
+                window.location.href="https://kurohikari123.github.io/marker.github.io/AR-LOGIN_PAGE.html"
             }
             const {message}=error
             //////////////////////////////////////////////////////////////////////////
