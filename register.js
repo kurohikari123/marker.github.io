@@ -39,6 +39,11 @@ async function register(){
             if(error == null)
             {
                 form.reset()
+                document.getElementById('error1').style.display="none"
+                document.getElementById('error2').style.display="none"
+                document.getElementById('error3').style.display="none"
+                document.getElementById('error4').style.display="none"
+                document.getElementById('error5').style.display="none"
             }
             const {message}=error
             //////////////////////////////////////////////////////////////////////////
