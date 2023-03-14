@@ -9,7 +9,7 @@ async function users(){
     console.log(error)
     console.log(data)
 }
-async function register(event){
+async function register(){
     const {error}=await supa
     .from('users')
     .insert({u_id:document.querySelector('#u_id').value,
@@ -52,7 +52,6 @@ async function register(event){
         document.getElementById('error3').style.display="none"
     }
     console.log(error)
-    event.preventDefault()
 }
 function check()
 {
