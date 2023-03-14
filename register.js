@@ -11,7 +11,7 @@ async function users(){
 }
 async function register(){
      
-    if((document.getElementById('u_id'))==0 || (document.getElementById('u_id'))==0||(document.getElementById('u_id'))==0||(document.getElementById('u_id'))==0||(document.getElementById('u_id'))==0||(document.getElementById('u_id'))==0||(document.getElementById('u_id'))==0||(document.getElementById('u_id'))==0 )
+    if(document.getElementById('u_id').value.length==0 || document.getElementById('ph_no').value.length==0 || document.getElementById('address').value.length==0 || document.getElementById('u_pass').value.length==0 || document.getElementById('email').value.length==0 || document.getElementById('firstname').value.length==0 || document.getElementById('lastname').value.length==0)
     {
        alert('Information Incomplete')
     }
