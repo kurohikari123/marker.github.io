@@ -12,7 +12,7 @@ async function location()
         model.setAttribute('gps-entity-place', `latitude: ${item.lat}; longitude: ${item.lng};`);
         model.setAttribute('gltf-model', './assets/asset.glb');
         model.setAttribute('animation-mixer', '');
-        model.setAttribute('rotation','0 0 30');
+        model.setAttribute('rotation','0 0 0');
         model.setAttribute('scale', '10 10 10');
         model.setAttribute('position','0 30 0');
         scene.appendChild(model);
