@@ -72,8 +72,8 @@ body{
      color: white;
      height: 32px;
      font-weight: 700;
+     cursor: pointer;
 }
-
  .submit_button{
      text-align: center;
      padding: 0 3px;
