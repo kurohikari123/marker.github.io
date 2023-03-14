@@ -20,6 +20,7 @@ async function register(){
         var phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
         if(document.getElementById('ph_no').value.match(phoneno))
         {
+            document.getElementById('error5').style.display="none"
             const {error}=await supa
             .from('users')
             .insert({u_id:document.querySelector('#u_id').value,
