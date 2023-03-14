@@ -6,7 +6,6 @@ async function location()
     const {data:posts,error}= await supa
     .from('locations')
     .select('*')
-    console.log(data)
     posts.forEach(function(item){
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${item.lat}; longitude: ${item.lng};`);
@@ -17,6 +16,7 @@ async function location()
         model.setAttribute('position','0 30 0');
         scene.appendChild(model);
     })
+    console.log(error)
 }
 window.onload = () => {
      location()
