@@ -20,6 +20,7 @@ async function register(){
         var phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
         if(document.getElementById('ph_no').value.match(phoneno))
         {
+            var form=document.getElementById('form')
             document.getElementById('error5').style.display="none"
             const {error}=await supa
             .from('users')
@@ -34,6 +35,11 @@ async function register(){
             updated_time:time,
             created_date:date,
             updated_date:date})
+
+            if(error == null)
+            {
+                form.reset()
+            }
             const {message}=error
             //////////////////////////////////////////////////////////////////////////
             if(message == 'duplicate key value violates unique constraint "users_u_ph_key"')
@@ -65,6 +71,7 @@ async function register(){
             console.log(error)
             return true
         }
+        ////////////////////////////////////////////////////////////////////////////////////
         else
         {
             document.getElementById('error1').style.display="none"
