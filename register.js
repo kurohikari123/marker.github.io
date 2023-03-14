@@ -21,7 +21,7 @@ async function register(){
          const {error}=await supa
          .from('users')
          .insert({u_id:document.querySelector('#u_id').value,
-         u_ph:document.querySelector('#ph_no').value,
+         u_ph:document.querySelector('#ph_no').value.toString(),
          u_address:document.querySelector('#address').value,
          u_pass:document.querySelector('#u_pass').value,
          u_mail:document.querySelector('#email').value,
