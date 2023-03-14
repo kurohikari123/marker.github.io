@@ -17,50 +17,60 @@ async function register(){
     }
      else
      {
+        var phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
+        if(document.getElementById('ph_no').value.match(phoneno))
+        {
+            const {error}=await supa
+            .from('users')
+            .insert({u_id:document.querySelector('#u_id').value,
+            u_ph:document.querySelector('#ph_no').value.toString(),
+            u_address:document.querySelector('#address').value,
+            u_pass:document.querySelector('#u_pass').value,
+            u_mail:document.querySelector('#email').value,
+            u_firstname:document.querySelector('#firstname').value,
+            u_lastname:document.querySelector('#lastname').value,
+            created_time:time,
+            updated_time:time,
+            created_date:date,
+            updated_date:date})
+            const {message}=error
+            //////////////////////////////////////////////////////////////////////////
+            if(message == 'duplicate key value violates unique constraint "users_u_ph_key"')
+            {
+                document.getElementById('error1').style.display="initial"
+            }
+            else
+            {
+                document.getElementById('error1').style.display="none"
+            }
+        
+        //////////////////////////////////////////////////////////////////////////////////
+            if(message == 'duplicate key value violates unique constraint "users_u_mail_key"')
+            {
+                document.getElementById('error2').style.display="initial"
+            }
+            else{
+                document.getElementById('error2').style.display="none"
+            }
+        ////////////////////////////////////////////////////////////////////////////////
+        
+            if(message == 'duplicate key value violates unique constraint "users_pkey"')
+            {
+                document.getElementById('error3').style.display="initial"
+            }
+            else{
+                document.getElementById('error3').style.display="none"
+            }
+            console.log(error)
+            return true
+        }
+        else
+        {
+            document.getElementById('error5').style.display="initial"
+            return false
+        }
+    }
          
-         const {error}=await supa
-         .from('users')
-         .insert({u_id:document.querySelector('#u_id').value,
-         u_ph:document.querySelector('#ph_no').value.toString(),
-         u_address:document.querySelector('#address').value,
-         u_pass:document.querySelector('#u_pass').value,
-         u_mail:document.querySelector('#email').value,
-         u_firstname:document.querySelector('#firstname').value,
-         u_lastname:document.querySelector('#lastname').value,
-         created_time:time,
-         updated_time:time,
-         created_date:date,
-         updated_date:date})
-         const {message}=error
-         //////////////////////////////////////////////////////////////////////////
-         if(message == 'duplicate key value violates unique constraint "users_u_ph_key"')
-         {
-             document.getElementById('error1').style.display="initial"
-         }
-         else
-         {
-             document.getElementById('error1').style.display="none"
-         }
-     
-     //////////////////////////////////////////////////////////////////////////////////
-         if(message == 'duplicate key value violates unique constraint "users_u_mail_key"')
-         {
-             document.getElementById('error2').style.display="initial"
-         }
-         else{
-             document.getElementById('error2').style.display="none"
-         }
-     ////////////////////////////////////////////////////////////////////////////////
-     
-         if(message == 'duplicate key value violates unique constraint "users_pkey"')
-         {
-             document.getElementById('error3').style.display="initial"
-         }
-         else{
-             document.getElementById('error3').style.display="none"
-         }
-         console.log(error)
-     }
     }
 function check()
 {
