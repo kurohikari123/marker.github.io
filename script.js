@@ -19,6 +19,10 @@ async function location()
     })
     console.log(error)
 }
+/* The above function works but we have to figure out the height relative to the ground as this will
+be used mostly when the person is outdoors */
+
+//Function to see if data is being retrieved properly
 async function loadData()
 {
     const {data,error}= await supa
