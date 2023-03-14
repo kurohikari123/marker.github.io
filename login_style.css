@@ -68,7 +68,7 @@ body{
      text-align: center;
      padding: 0 3px;
  }
- #error1,#error2{
+ #error1{
     color: red;
     display: none;
     margin-bottom: 0;

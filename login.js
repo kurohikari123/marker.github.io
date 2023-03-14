@@ -38,12 +38,10 @@ async function user_login(){
                 if(i>count)
                 {
                     document.getElementById('error1').style.display="initial"
-                    document.getElementById('error2').style.display="initial"
                 }
                 else
                 {
                     document.getElementById('error1').style.display="none"
-                    document.getElementById('error2').style.display="none"
                 }
             }
         })
