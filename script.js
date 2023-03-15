@@ -10,7 +10,7 @@ async function location()
         console.log(item)
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${item.lat}; longitude: ${item.lng};`);
-        model.setAttribute('gltf-model', './assets/asset.glb');
+        model.setAttribute('gltf-model', './assets/jerry_can.glb');
         model.setAttribute('animation-mixer', '');
         model.setAttribute('rotation','0 0 0');
         model.setAttribute('scale', '10 10 10');
