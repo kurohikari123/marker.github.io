@@ -12,6 +12,10 @@ async function location()
         model.setAttribute('gps-entity-place', `latitude: ${item.lat}; longitude: ${item.lng};`);
         if(item.loc_type == 'Hospital')
              model.setAttribute('gltf-model', './assets/kf2_medic_perk_symbol.glb');
+        else if(item.loc_type == 'Petrol Station')
+             model.setAttribute('gltf-model', './assets/jerry_can.glb');
+        else if(item.loc_type == 'Shopping')
+             model.setAttribute('gltf-model', './assets/simple_shopping_cart.glb');
         else
              model.setAttribute('gltf-model', './assets/asset.glb');
         model.setAttribute('animation-mixer', '');
