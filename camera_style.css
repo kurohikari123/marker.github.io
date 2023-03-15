@@ -97,22 +97,27 @@
   }
   #btn:checked ~ .menu-btn{
     left: 247px;
+    z-index: 9999;
   }
   .wrapper .menu-btn i{
     position: absolute;
     font-size: 23px;
     transition: all 0.3s ease;
+    z-index: 9999;
   }
   .wrapper .menu-btn i.fa-times{
     opacity: 0;
+    z-index: 9999;
   }
   #btn:checked ~ .menu-btn i.fa-times{
     opacity: 1;
     transform: rotate(-180deg);
+    z-index: 9999;
   }
   #btn:checked ~ .menu-btn i.fa-bars{
     opacity: 0;
     transform: rotate(180deg);
+    z-index: 9999;
   }
   #sidebar{
     position: fixed;
@@ -122,9 +127,11 @@
     overflow: hidden;
     left: -270px;
     transition: all 0.3s ease;
+    z-index: 9999;
   }
   #btn:checked ~ #sidebar{
     left: 0;
+    z-index: 9999;
   }
   #sidebar .title{
     line-height: 65px;
@@ -134,6 +141,7 @@
     font-weight: 600;
     color: #f2f2f2;
     border-bottom: 1px solid #222;
+    z-index: 9999;
   }
   #sidebar .list-items{
     position: relative;
@@ -142,6 +150,7 @@
     height: 100%;
     list-style: none;
     overflow-y: scroll;
+    z-index: 9999;
   }
   #sidebar .list-items li{
     padding-left: 40px;
@@ -149,14 +158,17 @@
     border-top: 1px solid rgba(255,255,255,0.1);
     border-bottom: 1px solid #333;
     transition: all 0.3s ease;
+    z-index: 9999;
   }
   #sidebar .list-items li:hover{
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
     box-shadow: 0 0px 10px 3px #222;
+    z-index: 9999;
   }
   #sidebar .list-items li:first-child{
     border-top: none;
+    z-index: 9999;
   }
   #sidebar .list-items li a{
     color: #f2f2f2;
@@ -166,9 +178,11 @@
     height: 100%;
     width: 100%;
     display: block;
+    z-index: 9999;
   }
   #sidebar .list-items li a i{
     margin-right: 20px;
+    z-index: 9999;
   }
   #sidebar .list-items .icons{
     width: 100%;
@@ -180,6 +194,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 9999;
   }
   #sidebar .list-items .icons a{
     height: 100%;
@@ -192,6 +207,7 @@
     border-radius: 5px;
     border: 1px solid #383838;
     transition: all 0.3s ease;
+    z-index: 9999;
   }
   #sidebar .list-items .icons a:hover{
     background: #404040;
