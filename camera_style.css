@@ -117,7 +117,7 @@ body{
   position: fixed;
   background: #404040;
   height: 100%;
-  width: 270px;
+  width: 135px;
   overflow: hidden;
   left: -270px;
   transition: all 0.3s ease;
