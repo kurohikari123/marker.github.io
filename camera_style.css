@@ -95,7 +95,7 @@ body{
   transition: all 0.3s ease;
 }
 #btn:checked ~ .menu-btn{
-  left: 247px;
+  left: 97px;
 }
 .wrapper .menu-btn i{
   position: absolute;
@@ -117,7 +117,7 @@ body{
   position: fixed;
   background: #404040;
   height: 100%;
-  width: 135px;
+  width: 110px;
   overflow: hidden;
   left: -270px;
   transition: all 0.3s ease;
