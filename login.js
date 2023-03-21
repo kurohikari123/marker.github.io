@@ -19,7 +19,7 @@ async function user_cred(){
 
 async function session(id,pas,type){
     const {mail}= await supa
-    .from(type)
+    .from('users')
     .select('u_mail')
     .eq('uid',id)
     console.log(mail)
