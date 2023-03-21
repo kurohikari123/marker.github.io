@@ -40,9 +40,14 @@ async function loadData()
 window.onload = () => {
      loadData()
      location()
+     user()
 };
 
 
-
+async function user()
+{
+     const { data: { user } } = await supabase.auth.getUser()
+    console.log(user)
+}
 
 
