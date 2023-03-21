@@ -46,7 +46,7 @@ async function user_login(){
             {
                 console.log(item)
                 session(document.getElementById('uid').value,document.getElementById('pass').value,'users')
-                window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
+                //window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
             }
             else{
                 i=i+1
@@ -82,7 +82,7 @@ async function admin_login(){
             {
                 console.log(item)
                 session(document.getElementById('uid').value,document.getElementById('pass').value,'admin')
-                window.location.href="https://kurohikari123.github.io/marker.github.io/AR-ADMIN_DASHBOARD.html"
+               // window.location.href="https://kurohikari123.github.io/marker.github.io/AR-ADMIN_DASHBOARD.html"
             }
             else{
                i=i+1
