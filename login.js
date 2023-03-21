@@ -17,20 +17,7 @@ async function user_cred(){
      console.log(data)
 }
 
-async function session(id,pas,type){
-    const {data}= await supa
-    .from('users')
-    .select('u_mail')
-    .eq('uid',id)
-     console.log(data)
  
-    const {error } = await supa.auth.signUp({
-    email: mail,
-    password: pas,
-  })
-  console.log(error)
-}
-
 async function user_login(){
     var i=1
     const {data:posts,error}=await supa
@@ -43,11 +30,10 @@ async function user_login(){
     if(!error){
         posts.forEach(function(item){
             if((item.u_id) == document.getElementById('uid').value && (item.u_pass) == document.getElementById('pass').value)
-            {
-                console.log(item)
-                session(document.getElementById('uid').value,document.getElementById('pass').value,'users')
-                //window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
-            }
+             {
+                 console.log(item) 
+                //window.location.h ref="https://kurohikari123.github.io/marker.github.io/index.html"
+            } 
             else{
                 i=i+1
                 console.log(i)
@@ -81,7 +67,6 @@ async function admin_login(){
             if((item.a_id) == document.getElementById('uid').value && (item.pass) == document.getElementById('pass').value )
             {
                 console.log(item)
-                session(document.getElementById('uid').value,document.getElementById('pass').value,'admin')
                // window.location.href="https://kurohikari123.github.io/marker.github.io/AR-ADMIN_DASHBOARD.html"
             }
             else{
