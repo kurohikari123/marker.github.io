@@ -23,7 +23,8 @@ async function session(id,pas,type){
     .select('u_mail')
     .eq('uid',id)
     console.log(mail)
-    const { data, error } = await supabase.auth.signInWithPassword({
+
+    const { data, error } = await supabase.auth.signUp({
     email: mail,
     password: pas,
   })
