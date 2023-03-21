@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script>
+        AFRAME.registerComponent('cylinder',{
+            init: function(){
+                const geometry = new THREE.CylinderGeometry( 7, 0, 20, 32 );
+                const material = new THREE.MeshPhongMaterial( {color: 0xFF0000} );
+                const cylinder = new THREE.Mesh( geometry, material );
+                this.el.setObject3D('mesh',cylinder);
+            }
+        });
+    </script>
+</head>
+<body>
+    <a-scene >
+        <a-text value="Hello World"></a-text>
+        <a-sphere color="red" radius="7" theta-length="90" >
+            <a-entity cylinder></a-entity>
+        </a-sphere>
+        <a-camera position="0 0 20"></a-camera>
+        <a-sky color="orange"></a-sky>
+    </a-scene>
+</body>
+</html>

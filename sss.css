@@ -1,0 +1,12 @@
+table
+{
+    background-color:rgba(30, 109, 102, 0.527);
+}
+input[type="submit"]
+{
+    width: 230px;
+}
+input[type="text"]
+{
+    width: 500px;
+}

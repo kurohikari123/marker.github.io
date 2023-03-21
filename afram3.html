@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AR.js A-Frame Location-based</title>
+<script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+<script src="ar-threex-location-only.js"></script>
+<script src="ar-threex.js"></script>
+<script src="ar.js"></script>
+
+
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.3/aframe/build/aframe-ar.js'></script>
+
+<script>
+   
+AFRAME.registerComponent('showtext',{
+    init: function(){
+       var sp=document.querySelector('#sp');//you need the a-cursor entity for this event to work
+       var text=document.querySelector('#t1');
+       sp.addEventListener('mouseenter',function(evt){
+           sp.setAttribute('material','color','white');
+           text.setAttribute('value',"Hello World");
+       });
+       sp.addEventListener('mouseleave',function(evt){
+           sp.setAttribute('material','color','red');
+           text.setAttribute('value',"");
+       });
+    }
+});
+ AFRAME.registerComponent('color-change',{
+    init: function(){
+        var b1=document.querySelector('#b1');
+        var sp=document.querySelector('#sp');
+        var b2=document.querySelector('#b2');
+        b1.addEventListener('click',function(evt){
+           sp.setAttribute('material','color','blue');
+        });
+        b2.addEventListener('click',function(evt){
+           sp.setAttribute('material','color','red');
+        });
+    }
+ });
+</script>
+
+</head>
+<body>
+    
+<div class="container">
+    <div align="bottom" style="position: absolute; bottom: 20px; height: 20px; width: 100px; color: black;">
+        <button color-change id="b1" style='position: relative; z-index: 1; padding: 15px 32px;'>
+            Blue
+        </button>
+    </div>
+    <div align="bottom" style="position: absolute; left: 100px; bottom: 20px; height: 20px; width: 100px; color: black;">
+        <button color-change id="b2" style='position: relative; z-index: 1; padding: 15px 32px;'>
+            Original
+        </button>
+    </div>
+    <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+        <a-camera gps-new-camera='gpsMinDistance: 5'>
+            <a-entity cursor="fuse: false;"  position="0 0 -1" geometry="primitive:ring; radiusInner: 0.02; radiusOuter: 0.03"  material="color: black; shader: flat"></a-ring>
+        </a-camera>
+        <a-text showtext id="t1" postion="0 28 0" scale="10 10 10"></a-text>
+        <a-entity color-change showtext id="sp" material='color: red' geometry='primitive: box' gps-new-entity-place="latitude: 26.138521970305003; longitude: 91.79979070874991" scale="10 10 10" position="0 30 0"></a-entity>
+    </a-scene>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Test</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/jquery.session@1.0.0/jquery.session.min.js
+"></script>
+</head>
+<body>
+    <input id="tbox" type="text"><br>
+    <button id="ses">Click to Get session</button>
+</body>
+<script>
+    $.session.set('userid','pat')
+    function session()
+    {
+       document.getElementById('tbox').value=$.session.get('userid')
+    }
+    document.getElementById("ses").addEventListener('click',session)
+</script>
+</html>

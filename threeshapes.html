@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AR.js A-Frame Location-based</title>
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
+
+<script>
+    AFRAME.registerComponent('heart',{
+        init: function(){
+            const x = 0, y = 0;
+
+            const heartShape = new THREE.Shape();
+            
+            heartShape.moveTo( x + 5, y + 5 );
+            heartShape.bezierCurveTo( x + 5, y + 5, x + 4, y, x, y );
+            heartShape.bezierCurveTo( x - 6, y, x - 6, y + 7,x - 6, y + 7 );
+            heartShape.bezierCurveTo( x - 6, y + 11, x - 3, y + 15.4, x + 5, y + 19 );
+            heartShape.bezierCurveTo( x + 12, y + 15.4, x + 16, y + 11, x + 16, y + 7 );
+            heartShape.bezierCurveTo( x + 16, y + 7, x + 16, y, x + 10, y );
+            heartShape.bezierCurveTo( x + 7, y, x + 5, y + 5, x + 5, y + 5 );
+            
+            const geometry = new THREE.ShapeGeometry( heartShape );
+            const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+            const mesh = new THREE.Mesh( geometry, material ) ;
+            this.el.setObject3D('mesh',mesh);
+        }
+    });
+
+    AFRAME.registerComponent('cone',{
+        init: function(){
+            const geometry = new THREE.ConeGeometry( 5, 20, 32 );
+            const material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+            const cone = new THREE.Mesh( geometry, material );
+            this.el.setObject3D('mesh',cone)
+        }
+    })
+</script>
+</head>
+<body><!--use rotation attribute for orienting objects-->
+<a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+    <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
+        <a-entity heart rotation="0 0 0" animation="property:rotation; to:0 360 0; loop: true; dur:10000" gps-new-entity-place="latitude: 26.138521970305003; longitude: 91.79979070874991" position="0 30 0" ></a-entity>
+</a-scene>
+</body>
+</html>

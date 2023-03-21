@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script>
+        AFRAME.registerComponent('cylinder',{
+            init: function(){
+                const geometry = new THREE.CylinderGeometry( 7, 0, 20, 32 );
+                const material = new THREE.MeshPhongMaterial( {color: 0xFF0000} );
+                const cylinder = new THREE.Mesh( geometry, material );
+                this.el.setObject3D('mesh',cylinder);
+            }
+        });
+        AFRAME.registerComponent('showtext',{
+            init: function(){
+               var sp=document.querySelector('#sp');//you need the a-cursor entity for this event to work
+               var text=document.querySelector('#t1');
+               var cl=document.querySelector('#cl')
+               sp.addEventListener('mouseenter',function(evt){
+                   sp.setAttribute('material','color','white');
+                   cl.setAttribute('material','color','white');
+                   text.setAttribute('value',"Hello World");
+               });
+               sp.addEventListener('mouseleave',function(evt){
+                   sp.setAttribute('material','color','red');
+                   cl.setAttribute('material','color','red');
+                   text.setAttribute('value',"");
+               });
+               cl.addEventListener('mouseenter',function(evt){
+                   sp.setAttribute('material','color','white');
+                   cl.setAttribute('material','color','white');
+                   text.setAttribute('value',"Hello World");
+               });
+               cl.addEventListener('mouseleave',function(evt){
+                   sp.setAttribute('material','color','red');
+                   cl.setAttribute('material','color','red');
+                   text.setAttribute('value',"");
+               });
+            }
+        });
+    </script>
+</head>
+<body>
+    <a-scene ><!--Trying to add events where text displays when clicking the marker-->
+        <a-camera position="0 0 20" rotation-reader>
+            <a-entity cursor="fuse: false;"  position="0 0 -1"   geometry="primitive:ring; radiusInner: 0.02; radiusOuter: 0.03"  material="color: black; shader: flat"></a-ring>
+        </a-camera>
+        <a-text id="t1" showtext position="0 10 0" scale="10 10 10"></a-text>
+        <a-sphere showtext id="sp" color="red" radius="7" position="0 1 0" theta-length="90" ></a-sphere>
+        <a-entity id="cl" cylinder position="0 -9 0"></a-entity>
+        <a-sky color="#400000"></a-sky>
+    </a-scene>
+</body>
+</html>

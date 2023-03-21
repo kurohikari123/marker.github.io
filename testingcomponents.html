@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <!--Dont import three.js here as a-frame is already a part of three.js-->
+    <script>
+         AFRAME.registerComponent('cube',{
+                init: function(){
+                    
+                   
+                    const geometry=new THREE.BoxGeometry(1,1,1);
+                    const material=new THREE.MeshPhongMaterial({color:0x0000ff});
+                    const cube=new THREE.Mesh(geometry,material);
+                    this.el.setObject3D('mesh',cube);
+                    
+                }
+            }
+         );
+        AFRAME.registerComponent('light',{
+          init: function(){
+            const light=new THEE.AmbientLight(0x404040,1);
+            light.set.position(-1,1,0);
+            this.el.setAttribute('light',light);
+          }
+        })
+    </script>
+
+
+
+  </head>
+  <body>
+    <a-scene>
+      
+      <a-entity light></a-entity>
+
+      <a-entity cube animation="property: rotation; to: 0 360 0; loop:true; dur: 10000"  rotation="0 4s5 0" position="-1 0.5 -3" ></a-entity>
+      
+      
+     
+    </a-scene>
+  </body>
+</html>

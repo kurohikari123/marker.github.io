@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AR.js A-Frame Location-based</title>
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
+  <script>
+    AFRAME.registerComponent('cylinder',{
+            init: function(){
+                const geometry = new THREE.CylinderGeometry( 7, 0, 20, 32 );
+                const material = new THREE.MeshPhongMaterial( {color: 0xFF0000} );
+                const cylinder = new THREE.Mesh( geometry, material );
+                this.el.setObject3D('mesh',cylinder);
+            }
+        });
+  </script>
+</head>
+<body>
+<a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+    <a-camera gps-new-camera='gpsMinDistance: 5'>
+      
+    </a-camera>
+    <a-sphere color="red" radius="7" position="0 1 0" theta-length="90" gps-new-entity-place="latitude: 26.138521970305003; longitude: 91.79979070874991" ></a-sphere>
+    <a-entity cylinder position="0 -9 0" gps-new-entity-place="latitude: 26.138521970305003; longitude: 91.79979070874991"></a-entity>
+    
+</a-scene>
+</body>
+</html>

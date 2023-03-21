@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   html,#wrapper{
+    height: 100%;
+   }
+   body{
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+   }
+#map-canvas{
+    height: 100%;
+}
+        
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        
+        <div id="map-canvas"></div>
+    </div>
+    
+    <script>
+        
+        function initMap(){
+
+            //Map options
+            var maxLat = Math.atan(Math.sinh(Math.PI)) * 180 / Math.PI;
+            var myLatLng = new google.maps.LatLng(-24, 123);
+            var loc={lat:26.138521970305003,lng:91.7997907087499}
+            var options={
+            zoom: 4,
+            center: loc,
+            fullscreenControl: true,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            restriction:{
+                latLngBounds: {north: maxLat, south: -maxLat, west: -180, east: 180},
+                strictBounds: true 
+            } ,
+            minZoom: 3,
+            maxZoom: 18
+        }
+        var map = new google.maps.Map(document.getElementById('map-canvas'),options);
+          // Create the search box and link it to the UI element.
+         const input = document.getElementById("pac-input");
+        const searchBox = new google.maps.places.SearchBox(input);
+
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener("bounds_changed", () => {
+        searchBox.setBounds(map.getBounds());
+      });
+
+
+
+
+      
+        }
+    </script>
+
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBL3BEa2Oq29fZ1uwAHcJ0P6UD87xMVGKc&callback=initMap&v=weekly"
+      defer
+    ></script>
+</body>
+</html>

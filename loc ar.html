@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AR.js A-Frame Location-based</title>
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
+<style>
+    .modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+
+.close-button:hover {
+    background-color: darkgray;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+</style>
+
+<script>
+    AFRAME.registerComponent('color',{
+        init: function(){
+            const modal = document.querySelector(".modal");
+            const trigger = document.querySelector(".trigger");
+            const closeButton = document.querySelector(".close-button");
+            var box=document.querySelector('.trigger');
+            box.addEventListener('click',function(evt){
+
+                //extracting coordinates
+                const coord=box.getAttribute('gps-new-entity-place');
+                const {latitude,longitude}=coord;
+                alert(latitude+""+longitude);
+                /////////////////////////////////////////////////////////////////////////////////
+                 document.getElementById("text").innerHTML=latitude+" "+longitude;
+
+
+                function toggleModal() {
+                    modal.classList.toggle("show-modal");
+                }
+                
+                function windowOnClick(event) {
+                    if (event.target === modal) {
+                        toggleModal();
+                    }
+                }
+                
+                trigger.addEventListener("click", toggleModal);
+                closeButton.addEventListener("click", toggleModal);
+                window.addEventListener("click", windowOnClick);
+            });
+            closeButton.addEventListener('mouseenter',function(evt){
+                function toggleModal() {
+                    modal.classList.toggle("show-modal");// figure ou how to close it
+                }
+                
+                function windowOnClick(event) {
+                    if (event.target === modal) {
+                        toggleModal();
+                    }
+                }
+                closeButton.addEventListener("click", toggleModal);
+                window.addEventListener("click", windowOnClick);
+            });
+        }
+    });
+</script>
+
+
+</head>
+<body>
+<a-scene  wasd-controls-enabled="false" cursor="rayOrigin: mouse" vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+    <a-camera gps-new-camera='gpsMinDistance: 5'>
+    </a-camera>
+    <a-entity color class="trigger" material='color: white' geometry='primitive: box' gps-new-entity-place="latitude: 26.138410; longitude:  91.800418" scale="5 5 1">
+    </a-entity>
+</a-scene>
+<div class="modal" style="z-index: 99;">
+    <div class="modal-content">
+        <span color class="close-button">&times;</span>
+        <h1 id="text"></h1>
+    </div>
+</div>
+</body>
+</html>
