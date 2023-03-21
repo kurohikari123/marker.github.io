@@ -24,7 +24,7 @@ async function session(id,pas,type){
     .eq('uid',id)
     console.log(mail)
 
-    const { data, error } = await supabase.auth.signUp({
+    const { data, error } = await supa.auth.signUp({
     email: mail,
     password: pas,
   })
