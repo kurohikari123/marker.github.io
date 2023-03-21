@@ -46,8 +46,9 @@ window.onload = () => {
 
 async function user()
 {
-     const { data: { user } } = await supabase.auth.getUser()
+     const { data: { user },error } = await supabase.auth.getUser()
     console.log(user)
+    console.log(error)
 }
 
 
