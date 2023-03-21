@@ -32,7 +32,7 @@ async function user_login(){
             if((item.u_id) == document.getElementById('uid').value && (item.u_pass) == document.getElementById('pass').value)
              {
                  console.log(item) 
-                 document.getElementById('myForm').submit()
+                 document.getElementById('submit-btn').click()
                 //window.location.h ref="https://kurohikari123.github.io/marker.github.io/index.html"
             } 
             else{
@@ -68,7 +68,7 @@ async function admin_login(){
             if((item.a_id) == document.getElementById('uid').value && (item.pass) == document.getElementById('pass').value )
             {
                 console.log(item)
-                document.getElementById('myForm').submit()
+                document.getElementById('submit-btn').click()
                // window.location.href="https://kurohikari123.github.io/marker.github.io/AR-ADMIN_DASHBOARD.html"
             }
             else{
