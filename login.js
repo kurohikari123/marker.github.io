@@ -17,12 +17,17 @@ async function user_cred(){
      console.log(data)
 }
 
-async function session(id,pas){
+async function session(id,pas,type){
+    const {mail}= await supa
+    .from(type)
+    .select('u_mail')
+    .eq('uid',id)
+    console.log(mail)
     const { data, error } = await supabase.auth.signInWithPassword({
-    email: id,
+    email: mail,
     password: pas,
   })
-  
+  console.log(error)
 }
 
 async function user_login(){
@@ -39,7 +44,7 @@ async function user_login(){
             if((item.u_id) == document.getElementById('uid').value && (item.u_pass) == document.getElementById('pass').value)
             {
                 console.log(item)
-                session(document.getElementById('uid').value,document.getElementById('pass').value)
+                session(document.getElementById('uid').value,document.getElementById('pass').value,'users')
                 window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
             }
             else{
@@ -75,6 +80,7 @@ async function admin_login(){
             if((item.a_id) == document.getElementById('uid').value && (item.pass) == document.getElementById('pass').value )
             {
                 console.log(item)
+                session(document.getElementById('uid').value,document.getElementById('pass').value,'admin')
                 window.location.href="https://kurohikari123.github.io/marker.github.io/AR-ADMIN_DASHBOARD.html"
             }
             else{
