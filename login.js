@@ -17,6 +17,14 @@ async function user_cred(){
      console.log(data)
 }
 
+async function session(id,pas){
+    const { data, error } = await supabase.auth.signInWithPassword({
+    email: id,
+    password: pas,
+  })
+  
+}
+
 async function user_login(){
     var i=1
     const {data:posts,error}=await supa
@@ -31,6 +39,7 @@ async function user_login(){
             if((item.u_id) == document.getElementById('uid').value && (item.u_pass) == document.getElementById('pass').value)
             {
                 console.log(item)
+                session(document.getElementById('uid').value,document.getElementById('pass').value)
                 window.location.href="https://kurohikari123.github.io/marker.github.io/index.html"
             }
             else{
