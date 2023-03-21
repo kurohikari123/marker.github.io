@@ -18,13 +18,13 @@ async function user_cred(){
 }
 
 async function session(id,pas,type){
-    const {mail}= await supa
+    const {data}= await supa
     .from('users')
     .select('u_mail')
     .eq('uid',id)
-    console.log(mail)
-
-    const { data, error } = await supa.auth.signUp({
+     console.log(data)
+ 
+    const {error } = await supa.auth.signUp({
     email: mail,
     password: pas,
   })
